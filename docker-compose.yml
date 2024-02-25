@@ -2,7 +2,7 @@ version: '3'
 
 services:
   app:
-    image: prawee/strapi
+    image: wawacoong/strapi:1.0.0
     container_name: ced-app
     environment:
       - DATABASE_CLIENT=${DATABASE_CLIENT}
@@ -22,7 +22,7 @@ services:
       - db
     restart: always
   db:
-    image: postgres:latest
+    image: postgres:15.5-bullseye
     container_name: ced-db
     environment:
       - POSTGRES_USER=${DATABASE_USERNAME}
