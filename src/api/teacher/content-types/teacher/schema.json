@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "teachers",
+  "info": {
+    "singularName": "teacher",
+    "pluralName": "teachers",
+    "displayName": "Teacher",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "last_name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "department": {
+      "type": "string",
+      "required": true
+    },
+    "teacher_email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "teacher_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "mapping": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::mapping.mapping",
+      "inversedBy": "teachers"
+    }
+  }
+}
